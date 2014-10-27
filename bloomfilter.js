@@ -26,19 +26,19 @@
         // Number of slices, k
         var k = Math.ceil(- Math.log(error_rate) / Math.log(2));
         // Total number of bits, m
-        // Size of the UInt32 table, n
+        // Size of the Int32 table, n
         var m, n;
         if (typeof capacity !== "number") {
             a = capacity;
             // Total number of bits, m
             m = a.length * 32;
-            // Size of the UInt32 table, n
+            // Size of the Int32 table, n
             n = a.length;
         }
         else {
             // Total number of bits, m
             m = Math.ceil(capacity * Math.abs(Math.log(error_rate)) / (k * Math.pow(Math.log(2), 2))) * k;
-            // Size of the UInt32 table, n
+            // Size of the Int32 table, n
             n = Math.ceil(m / 32);
             // Round total number of bits to closest multiple of 32
             m = n * 32;
